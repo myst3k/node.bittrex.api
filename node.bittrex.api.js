@@ -339,18 +339,58 @@ var NodeBittrexApi = function() {
     getcurrencies: function(callback) {
       publicApiCall(opts.baseUrl + '/public/getcurrencies', callback, null);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getticker( { market : 'BTC-LTC' }, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getticker: function(options, callback) {
       publicApiCall(opts.baseUrl + '/public/getticker', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getmarketsummaries( function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getmarketsummaries: function(callback) {
       publicApiCall(opts.baseUrl + '/public/getmarketsummaries', callback, null);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getmarketsummary( { market : 'BTC-LTC'}, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getmarketsummary: function(options, callback) {
       publicApiCall(opts.baseUrl + '/public/getmarketsummary', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getorderbook({ market : 'BTC-LTC', depth : 10, type : 'both' }, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getorderbook: function(options, callback) {
       publicApiCall(opts.baseUrl + '/public/getorderbook', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getmarkethistory({ market : 'BTC-LTC' }, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getmarkethistory: function(options, callback) {
       publicApiCall(opts.baseUrl + '/public/getmarkethistory', callback, options);
     },
@@ -381,18 +421,58 @@ var NodeBittrexApi = function() {
     getopenorders: function(options, callback) {
       credentialApiCall(opts.baseUrl + '/market/getopenorders', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getbalances( function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getbalances: function(callback) {
       credentialApiCall(opts.baseUrl + '/account/getbalances', callback, {});
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getbalance({ currency : 'BTC' }, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getbalance: function(options, callback) {
       credentialApiCall(opts.baseUrl + '/account/getbalance', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getwithdrawalhistory({ currency : 'BTC' }, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getwithdrawalhistory: function(options, callback) {
       credentialApiCall(opts.baseUrl + '/account/getwithdrawalhistory', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getdepositaddress({ currency : 'BTC' }, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getdepositaddress: function(options, callback) {
       credentialApiCall(opts.baseUrl + '/account/getdepositaddress', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.getdeposithistory({ currency : 'BTC' }, function( data, err ) {
+     *   console.log( data );
+     * });
+     * ```
+     */
     getdeposithistory: function(options, callback) {
       credentialApiCall(opts.baseUrl + '/account/getdeposithistory', callback, options);
     },
@@ -402,6 +482,14 @@ var NodeBittrexApi = function() {
     getorder: function(options, callback) {
       credentialApiCall(opts.baseUrl + '/account/getorder', callback, options);
     },
+    /**
+     * @example
+     * ```javascript
+     * bittrex.withdraw({ currency : 'BTC', quantity : '1.5112', address : 'THE_ADDRESS' }, function(
+     *   console.log( data );
+     * });
+     * ```
+     */
     withdraw: function(options, callback) {
       credentialApiCall(opts.baseUrl + '/account/withdraw', callback, options);
     }
