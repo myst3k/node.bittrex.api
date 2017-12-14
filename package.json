@@ -33,9 +33,12 @@
   },
   "homepage": "https://github.com/dparlevliet/node.bittrex.api",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "docs": "jsdoc2md --template jsdoc2md/README.hbs --files node.bittrex.api.js > README.md",
+    "docs-json": "jsdoc2md --json node.bittrex.api.js"
   },
   "devDependencies": {
+    "jsdoc-to-markdown": "^3.0.2",
     "mocha": "^3.3.0"
   }
 }
