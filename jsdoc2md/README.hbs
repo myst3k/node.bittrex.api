@@ -117,7 +117,7 @@ By default the returned data is an object, in order to get clear text you have t
 
 The baseUrl itself can also be set via options
 ```javascript
-'baseUrl' : 'https://bittrex.com/api/v1',
+'baseUrl' : 'https://bittrex.com/api/v1.1',
 'baseUrlv2' : 'https://bittrex.com/Api/v2.0',
 ```
 
