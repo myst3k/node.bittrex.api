@@ -117,7 +117,7 @@ By default the returned data is an object, in order to get clear text you have t
 
 The baseUrl itself can also be set via options
 ```javascript
-'baseUrl' : 'https://bittrex.com/api/v1',
+'baseUrl' : 'https://bittrex.com/api/v1.1',
 'baseUrlv2' : 'https://bittrex.com/Api/v2.0',
 ```
 
@@ -405,79 +405,129 @@ will result in (the Header is being set too):
 https://bittrex.com/api/v1.1/account/getbalances?currency=BTC&apikey=API_KEY&nonce=4456490600
 ```
 
-##### getticker
+##### getmarkets()
+```javascript
+bittrex.getmarkets( function( data, err ) {
+  console.log( data );
+});
+```
+##### getcurrencies()
+```javascript
+bittrex.getcurrencies( function( data, err ) {
+  console.log( data );
+});
+```
+##### getticker()
 ```javascript
 bittrex.getticker( { market : 'BTC-LTC' }, function( data, err ) {
   console.log( data );
 });
 ```
-
-##### getbalances
-```javascript
-bittrex.getbalances( function( data, err ) {
-  console.log( data );
-});
-```
-
-##### getmarkethistory
-```javascript
-bittrex.getmarkethistory({ market : 'BTC-LTC' }, function( data, err ) {
-  console.log( data );
-});
-```
-
-##### getmarketsummaries
+##### getmarketsummaries()
 ```javascript
 bittrex.getmarketsummaries( function( data, err ) {
   console.log( data );
 });
 ```
-
-##### getmarketsummary
+##### getmarketsummary()
 ```javascript
 bittrex.getmarketsummary( { market : 'BTC-LTC'}, function( data, err ) {
   console.log( data );
 });
 ```
-
-##### getorderbook
+##### getorderbook()
 ```javascript
 bittrex.getorderbook({ market : 'BTC-LTC', depth : 10, type : 'both' }, function( data, err ) {
   console.log( data );
 });
 ```
-
-##### getwithdrawalhistory
+##### getmarkethistory()
 ```javascript
-bittrex.getwithdrawalhistory({ currency : 'BTC' }, function( data, err ) {
+bittrex.getmarkethistory({ market : 'BTC-LTC' }, function( data, err ) {
   console.log( data );
 });
 ```
-
-##### getdepositaddress
+##### buylimit()
 ```javascript
-bittrex.getdepositaddress({ currency : 'BTC' }, function( data, err ) {
+bittrex.buylimit({market: 'BTC-LTC', quantity: '100', rate: '.0015'}, function( data, err ) {
   console.log( data );
 });
 ```
-
-##### getdeposithistory
+##### buymarket()
 ```javascript
-bittrex.getdeposithistory({ currency : 'BTC' }, function( data, err ) {
+bittrex.buymarket({market: 'BTC-LTC', quantity: '100'}, function( data, err ) {
   console.log( data );
 });
 ```
-
-##### getbalance
+##### selllimit()
+```javascript
+bittrex.selllimit({market: 'BTC-LTC', quantity: '100', rate: '.0015'}, function( data, err ) {
+  console.log( data );
+});
+```
+##### sellmarket()
+```javascript
+bittrex.sellmarket({market: 'BTC-LTC', quantity: '100'}, function( data, err ) {
+  console.log( data );
+});
+```
+##### cancel()
+```javascript
+bittrex.cancel({uuid: 'EE50BC5B-E9A1-478A-BEB6-F73023ABD069'}, function( data, err ) {
+  console.log( data );
+});
+```
+##### getopenorders()
+```javascript
+bittrex.getopenorders({market: 'USDT-BTC'}, function( data, err ) {
+  console.log( data );
+});
+```
+##### getbalances()
+```javascript
+bittrex.getbalances( function( data, err ) {
+  console.log( data );
+});
+```
+##### getbalance()
 ```javascript
 bittrex.getbalance({ currency : 'BTC' }, function( data, err ) {
   console.log( data );
 });
 ```
-
-##### withdraw
+##### getwithdrawalhistory()
 ```javascript
-bittrex.withdraw({ currency : 'BTC', quantity : '1.5112', address : 'THE_ADDRESS' }, function( data, err ) {
+bittrex.getwithdrawalhistory({ currency : 'BTC' }, function( data, err ) {
+  console.log( data );
+});
+```
+##### getdepositaddress()
+```javascript
+bittrex.getdepositaddress({ currency : 'BTC' }, function( data, err ) {
+  console.log( data );
+});
+```
+##### getdeposithistory()
+```javascript
+bittrex.getdeposithistory({ currency : 'BTC' }, function( data, err ) {
+  console.log( data );
+});
+```
+##### getorderhistory()
+```javascript
+bittrex.getorderhistory({market: 'USDT-BTC'}, function( data, err ) {
+  console.log( data );
+});
+```
+##### getorder()
+```javascript
+bittrex.getorder({uuid: 'EE50BC5B-E9A1-478A-BEB6-F73023ABD069'}, function( data, err ) {
+  console.log( data );
+});
+```
+##### withdraw()
+```javascript
+bittrex.withdraw({ currency : 'BTC', quantity : '1.5112', address : 'THE_ADDRESS' }, function(
   console.log( data );
 });
 ```
